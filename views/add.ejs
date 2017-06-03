@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+ <meta charset="utf-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <title>Nodejs & mySQL CRUD</title>
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+ <link href="/css/style.css" rel="stylesheet">
+</head>
+<body>
+
+ <nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+   <div class="navbar-header">
+    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+     <span class="sr-only">Toggle navigation</span>
+     <span class="icon-bar"></span>
+     <span class="icon-bar"></span>
+     <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand" href="../">Simple Nodejs CRUD</a>
+   </div>
+   <div id="navbar" class="navbar-collapse collapse">
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="#">Início</a></li>
+      <li><a href="#">Opções</a></li>
+      <li><a href="#">Perfil</a></li>
+      <li><a href="#">Ajuda</a></li>
+    </ul>
+   </div>
+  </div>
+ </nav>
+ 
+ <div id="main" class="container-fluid">
+  
+  <h3 class="page-header">Adicionar novo funcionário</h3>
+  
+  <form action="/system/create" method="post">
+    <div class="row">
+      <div class="form-group col-md-1">
+        <label for="ID">ID</label>
+        <input type="text" class="form-control" value="<%=nextID%>" id="funcId" name="funcId">
+      </div>
+    <div class="form-group col-md-4">
+        <label for="Nome">Nome</label>
+        <input type="text" class="form-control" id="funcName" name="funcName" placeholder="Informe o nome">
+      </div>
+  </div>
+  
+  <div class="row">
+      <div class="form-group col-md-3">
+        <label for="Nascimnto">Nascimento</label>
+        <input type="text" class="form-control" id="funcBirth" name="funcBirth" placeholder="Data de Nascimento. Ex: 19/06/1998">
+      </div>
+  </div>
+  
+  <div class="row">
+      <div class="form-group col-md-2">
+        <label for="Salario">Salário</label>
+        <input type="number" class="form-control" id="funcPay" step="0.01" name="funcPay" placeholder="Informe o salário">
+      </div>
+  </div>
+  
+  <div class="row">
+      <div class="form-group col-md-3">
+        <label for="CPF">CPF</label>
+        <input type="text" class="form-control" id="funcCPF" name="funcCPF" placeholder="CPF no formato: 000.000.000-00">
+      </div>
+  </div>
+  
+  <div class="row">
+      <div class="form-group col-md-3">
+        <label for="Veiculo">Veículo</label>
+        <select name="funcVechile" class="form-control">
+            <option value="Nenhum">Nenhum</option>
+            <option value="Bike">BIKE</option>
+            <option value="Motocicleta">Motocileta</option>
+            <option value="Carro">Carro</option>
+        </select>
+      </div>
+  </div>
+	<hr />
+	
+	<div class="row">
+	  <div class="col-md-12">
+	  	<button type="submit" class="btn btn-primary">Salvar</button>
+		  <a href="/system" class="btn btn-default">Cancelar</a>
+	  </div>
+	</div>
+
+  </form>
+ </div>
+ 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+</body>
+</html>

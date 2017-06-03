@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+ <meta charset="utf-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <title>Nodejs & mySQL CRUD</title>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+ <link href="/css/style.css" rel="stylesheet">
+</head>
+<body>
+
+ <nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+   <div class="navbar-header">
+    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+     <span class="sr-only">Toggle navigation</span>
+     <span class="icon-bar"></span>
+     <span class="icon-bar"></span>
+     <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand" href="/">Simple Nodejs CRUD</a>
+   </div>
+   <div id="navbar" class="navbar-collapse collapse">
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="#">Início</a></li>
+      <li><a href="#">Opções</a></li>
+      <li><a href="#">Perfil</a></li>
+      <li><a href="#">Ajuda</a></li>
+    </ul>
+   </div>
+  </div>
+ </nav>
+ 
+ <div id="main" class="container-fluid">
+  
+  <h3 class="page-header">Editar Funcionário #<%= func.ID_ent%></h3>
+  
+  <form action="/system/update" method="post">
+  	<div class="row">
+  	  <div class="form-group col-md-1">
+  	  	<label for="ID">ID</label>
+  	  	<input type="text" class="form-control" readonly value="<%= func.ID_ent%>" id="funcId" name="funcID">
+  	  </div>
+	  <div class="form-group col-md-3">
+  	  	<label for="Nome">Nome</label>
+  	  	<input type="text" class="form-control" id="funcName" value="<%= func.Nome_ent%>" name="funcName" placeholder="Informe o nome">
+  	  </div>
+	</div>
+	
+	<div class="row">
+  	  <div class="form-group col-md-3">
+  	  	<label for="Nascimento">Nascimento</label>
+  	  	<input type="text" class="form-control" id="funcBirth" value="<%= func.DataNasc_ent%>" name="funcBirth" placeholder="Data de Nascimento. Ex: 19/06/1998">
+  	  </div>
+	</div>
+	
+	<div class="row">
+  	  <div class="form-group col-md-2">
+  	  	<label for="Salario">Salário</label>
+  	  	<input type="number" class="form-control" step="0.01" id="funcPay" value="<%= func.Salario_ent%>" name="funcPay" placeholder="Informe o salário">
+  	  </div>
+	</div>
+	
+	<div class="row">
+  	  <div class="form-group col-md-3">
+  	  	<label for="CPF">CPF</label>
+  	  	<input type="text" class="form-control" id="funcCPF" value="<%= func.CPF_ent%>" name="funcCPF" placeholder="CPF no formato: 000.000.000-00">
+  	  </div>
+	</div>
+	
+	<div class="row">
+  	  <div class="form-group col-md-3">
+  	  	<label for="Veiculo">Veículo</label>
+        <select name="funcVechile" class="form-control" selected="Carro">
+            <option value="Nenhum" <%= (func.Veiculo_ent=='Nenhum' ? 'selected' : '')%>> 
+              Nenhum
+            </option>
+            <option value="Bike" <%= (func.Veiculo_ent=='Bike' ? 'selected' : '')%>>
+              Bike
+            </option>
+            <option value="Motocicleta" <%= (func.Veiculo_ent=='Motocicleta' ? 'selected' : '')%>>
+              Motocileta
+            </option>
+            <option value="Carro" <%= (func.Veiculo_ent=='Carro' ?  'selected' : '')%>>
+              Carro
+            </option>
+        </select>
+  	  </div>
+	</div>
+	
+	<hr />
+	
+	<div class="row">
+	  <div class="col-md-12">
+	  	<button type="submit" class="btn btn-primary">Atualizar</button>
+		  <a href="/system" class="btn btn-default">Cancelar</a>
+	  </div>
+	</div>
+
+  </form>
+ </div>
+ 
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+</body>
+</html>

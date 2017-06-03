@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+ <meta charset="utf-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <title>Nodejs & mySQL CRUD</title>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+ <link href="/css/style.css" rel="stylesheet">
+ <STYLE TYPE="text/css">
+  p{
+    font-size: 16px;
+  }
+  table{
+    width: 200px;
+  }
+  th{
+    text-align: center;
+  }
+  td, th{
+    padding: 5px;
+    font-family: 'Arial';
+    font-size: 15px;
+  }
+ </STYLE>
+</head>
+<body>
+
+ <nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+   <div class="navbar-header">
+    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+     <span class="sr-only">Toggle navigation</span>
+     <span class="icon-bar"></span>
+     <span class="icon-bar"></span>
+     <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand" href="#">Simple Nodejs CRUD</a>
+   </div>
+   <div id="navbar" class="navbar-collapse collapse">
+    <ul class="nav navbar-nav navbar-right">
+     <li><a href="#">Início</a></li>
+     <li><a href="#">Opções</a></li>
+     <li><a href="#">Perfil</a></li>
+     <li><a href="#">Ajuda</a></li>
+    </ul>
+   </div>
+  </div>
+ </nav>
+
+  <div id="main" class="container-fluid">
+    <h3 class="page-header">CRUD com NodeJS</h3>
+    <h4>Demonstração de uma aplicação de CRUD usando Nodejs em conjunto com o banco de dados MySQL.</h4>
+    <p>A aplicação consiste na manipulação da tabela:</p>
+    <div class="row">
+      <div class="col-md-5 col-sm-12">
+        <table border="1">
+            <tr>
+              <th colspan="2">entregador</th>
+            </tr>
+            <tr>
+              <td>* ID_ent</td>
+              <td>int</td>
+            </tr>
+            <tr>
+              <td>Nome_ent</td>
+              <td>varchar(45)</td>
+            </tr>
+            <tr>
+              <td>Salario_ent</td>
+              <td>float</td>
+            </tr>
+            <tr>
+              <td>DataNasc_ent</td>
+              <td>varchar(10)</td>
+            </tr>
+            <tr>
+              <td>CPF_ent</td>
+              <td>varchar(20)</td>
+            </tr>
+            <tr>
+              <td>Veiculo_ent</td>
+              <td>varchar(10)</td>
+            </tr>
+        </table>
+      </div>
+    </div>
+    <div class="row" style="margin-top:15px;">
+      <div class="col-md-12">
+        <p>Construido com:</p>
+        <ul>
+          <li>Nodejs - como linguagem no servidor</li>
+          <li>MySQL - como banco de dados</li>
+          <li>Express - como servidor</li>
+          <li>Bootstrap - como front end framework</li>
+        </ul>
+      </div>
+    </div>
+    <div class="row" style="margin-top:15px;">
+      <div class="col-md-12">
+        <a class="btn btn-primary btn-md" href="/system">Acessar aplicação</a>
+        <a class="btn btn-info btn-md" href="/system">Github</a>
+      </div>
+    </div>
+    <hr>
+    <div class="row" style="margin-top:15px;">
+      <div class="col-md-6" style="padding-bottom:10px;">
+          <i>* A aplicação se encontra aberta ao público de modo que qualquer um possa realizar cadastros então, por favor, mantenha descrição. Nada de nomes obscenos ou dar drop no database.</i>
+      </div>
+    </div>
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+</body>
+</html>
