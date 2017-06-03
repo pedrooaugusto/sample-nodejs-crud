@@ -8,10 +8,10 @@ let mysql = require("mysql");
 let poolConnection = mysql.createPool(
 {
 	connectionLimit : 100,
-	host			: "127.0.0.1",
-	user			: "root",
-	password		: "",
-	database		: "august",
+	host			: "us-cdbr-iron-east-03.cleardb.net",
+	user			: "b5581a735da0ab",
+	password		: "307efb8b",
+	database		: "heroku_63b1b1f4abf2dc2",
 	debug 			: false,
 });
 module.exports = poolConnection;
